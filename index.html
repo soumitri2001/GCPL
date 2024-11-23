@@ -1,1 +1,203 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <style>
+        td,
+        th {
+            border: 0px solid black;
+        }
+
+        img {
+            padding: 5px;
+        }
+    </style>
+    <title>Towards Generative Class Prompt Learning for Fine-grained Visual Recognition</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.svg">
+    <link rel="stylesheet" href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title" , style="color:purple;">Towards Generative Class Prompt Learning for Fine-grained Visual Recognition</h1>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">
+                            <a href="https://soumitri2001.github.io/">Soumitri Chattopadhyay</a><sup>1</sup>,</span>
+                        <span class="author-block">
+                            <a href="https://ayankumarbhunia.github.io/">Sanket Biswas</a><sup>2</sup>,</span>
+                        <span class="author-block">
+                            <a href="https://aneeshan95.github.io/">Emanuele Vivoli</a><sup>2,3</sup>,</span>
+                        <span class="author-block">
+                            <a href="http://www.pinakinathc.me/">Josep Lladós</a><sup>2</sup></span>
+                        </span>
+                    </div>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"><sup>1</sup>Department of Computer Science, University of North Carolina at Chapel Hill, USA</span>
+                        <span class="author-block"><sup>2</sup>Computer Vision Center & Computer Science Department, Universitat Autònoma de Barcelona, Spain</span>
+                        <span class="author-block"><sup>2</sup>MICC, University of Florence, Italy</span>
+                    </div>
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- PDF Link. -->
+                            <span class="link-block">
+                                <a href="https://arxiv.org/pdf/2409.01835"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </span>
+                                    <span>Paper (PDF)</span>
+                                </a>
+                            </span>
+                            <span class="link-block">
+                                <a href="https://arxiv.org/abs/2409.01835"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="ai ai-arxiv"></i>
+                                    </span>
+                                    <span>arXiv</span>
+                                </a>
+                            </span>
+                            <!-- Video Link. -->
+                            <span class="link-block">
+                                <a href="" class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fab fa-youtube"></i>
+                                    </span>
+                                    <span>Video (YouTube)</span>
+                                </a>
+                            </span>
+
+                            <!-- Dataset Link. -->
+                            <span class="link-block">
+                                <a href="static/images/bmvc_poster.pdf" class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="far fa-images"></i>
+                                    </span>
+                                    <span>Poster</span>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+        <div class="hero-body">
+            <img class="round" style="width:1500px" src="./static/images/bmvc_teaser.png" />
+            <h2 class="subtitle has-text-centered">
+                <span class="dnerf"></span>Overview of our approach compared to existing VLM adaptation methods. 
+                (a) Zero-shot inference with CLIP; (b) Contextual prompt token learning; 
+                (c) Adapter-based tuning with handcrafted prompts on frozen CLIP representations; 
+                (d) <strong>Our setup (GCPL):</strong> generatively learning the <code>[CLASS]</code> token by prompting a frozen 
+                text-to-image latent diffusion model.
+
+            </h2>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    Although foundational vision-language models (VLMs) have proven to be very successful 
+                    for various semantic discrimination tasks, they still struggle to perform faithfully for 
+                    fine-grained categorization. Moreover, foundational models trained on one domain do not 
+                    generalize well on a different domain without fine-tuning. We attribute these to the 
+                    limitations of the VLM's semantic representations and attempt to improve their fine-grained 
+                    visual awareness using generative modeling. Specifically, we propose two novel methods: 
+                    <i><b>G</b>enerative <b>C</b>lass <b>P</b>rompt <b>L</b>earning</i> (GCPL) 
+                    and <i><b>Co</b>ntrastive <b>M</b>ulti-class <b>P</b>rompt <b>Le</b>arning</i> (CoMPLe). 
+                    Utilizing text-to-image diffusion models, GCPL significantly improves the visio-linguistic 
+                    synergy in class embeddings by conditioning on few-shot exemplars with learnable class prompts. 
+                    CoMPLe builds on this foundation by introducing a contrastive learning component that 
+                    encourages inter-class separation during the generative optimization process. 
+                    Our empirical results demonstrate that such a generative class prompt learning approach 
+                    substantially outperform existing methods, offering a better alternative to few shot image 
+                    recognition challenges. 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- <section class="hero teaser">
+         <div class="container is-max-desktop">
+            <div class="hero-body">
+               <iframe width="720" height="480" src="https://www.youtube.com/embed/k7xFbELpnv4?">
+               </iframe>
+               <h2 class="subtitle has-text-centered">
+                  <span class="dnerf"></span>
+               </h2>
+            </div>
+         </div>
+      </section> -->
+
+        <!--/ Abstract. -->
+        <!-- Paper video. -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                <!-- Abstract. -->
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <h2 class="title is-3">Proposed Methodology</h2>
+                        <div class="content has-text-justified">
+                            </h2>
+                            <center>
+                                <img src="./static/images/bmvc_teaser.png" alt="" border=0 height=300
+                                    width=650></img></ </center>
+                                <div class="content has-text-justified">
+                                    <strong>Contrastive multi-class prompt learning (CoMPLe)</strong> framework. 
+                                    Our proposed CoMPLe learns class prompts by optimizing the LDM loss for 
+                                    the trainable class token, minimizing noise reconstruction for ground truth 
+                                    noise while maximizing it for other class noises. Red arrows show "maximize" 
+                                    and blue arrows show "minimize". The diffusion classifier 
+                                    uses our few-shot learned <code>[CLASS]</code> embeddings for inference.
+                                </div>
+                                &nbsp;
+                        </div>
+                    </div>
+                </div>
+        </section>
+    
+        
+                <section class="section" id="BibTeX">
+                    <div class="container is-max-desktop content">
+                        <h2 class="title">BibTeX</h2>
+                        <pre><code>@inproceedings{chattopadhyay2024towards,
+title={Towards Generative Class Prompt Learning for Fine-grained Visual Recognition},
+author={Chattopadhyay, Soumitri and Biswas, Sanket and Vivoli, Emanuele and Lladós, Josep},
+booktitle={British Machine Vision Conference (BMVC)},
+year={2024}
+}</code></pre>
+                    
+
+
+                <p style="text-align:center"> © Soumitri Chattopadhyay | Last updated: 22 November 2024 | Good artists <a
+                        href="https://nerfies.github.io/"> copy</a>, great artists steal.</a></p>
+                </body>
+
+</html>
