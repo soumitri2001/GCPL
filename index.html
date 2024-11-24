@@ -41,13 +41,13 @@
                     <h1 class="title is-1 publication-title" , style="color:purple;">Towards Generative Class Prompt Learning for Fine-grained Visual Recognition</h1>
                     <div class="is-size-5 publication-authors">
                         <span class="author-block">
-                            <a href="https://soumitri2001.github.io/">Soumitri Chattopadhyay</a><sup>1</sup>,</span>
+                            <a href="https://scholar.google.com/citations?hl=en&user=AyMx6O4AAAAJ&view_op=list_works&sortby=pubdate">Soumitri Chattopadhyay</a><sup>1</sup>,</span>
                         <span class="author-block">
-                            <a href="https://ayankumarbhunia.github.io/">Sanket Biswas</a><sup>2</sup>,</span>
+                            <a href="https://scholar.google.com/citations?hl=en&user=J-VlCNYAAAAJ&view_op=list_works&sortby=pubdate/">Sanket Biswas</a><sup>2</sup>,</span>
                         <span class="author-block">
-                            <a href="https://aneeshan95.github.io/">Emanuele Vivoli</a><sup>2,3</sup>,</span>
+                            <a href="https://scholar.google.com/citations?hl=en&user=BCzPjawAAAAJ&view_op=list_works&sortby=pubdate/">Emanuele Vivoli</a><sup>2,3</sup>,</span>
                         <span class="author-block">
-                            <a href="http://www.pinakinathc.me/">Josep Lladós</a><sup>2</sup></span>
+                            <a href="https://scholar.google.com/citations?hl=en&user=92pWl-AAAAAJ&view_op=list_works&sortby=pubdate/">Josep Lladós</a><sup>2</sup></span>
                         </span>
                     </div>
                     <div class="is-size-5 publication-authors">
@@ -55,6 +55,8 @@
                         <span class="author-block"><sup>2</sup>Computer Vision Center & Computer Science Department, Universitat Autònoma de Barcelona, Spain</span>
                         <span class="author-block"><sup>2</sup>MICC, University of Florence, Italy</span>
                     </div>
+                    <br>
+                    <h3 class="title is-3"><i>BMVC 2024 (Oral)</i></h3>
                     <div class="column has-text-centered">
                         <div class="publication-links">
                             <!-- PDF Link. -->
@@ -78,7 +80,8 @@
                             </span>
                             <!-- Video Link. -->
                             <span class="link-block">
-                                <a href="" class="external-link button is-normal is-rounded is-dark">
+                                <a href="https://youtu.be/G3cKgSaTDJs"
+                                    class="external-link button is-normal is-rounded is-dark">
                                     <span class="icon">
                                         <i class="fab fa-youtube"></i>
                                     </span>
@@ -104,7 +107,9 @@
 <section class="hero teaser">
     <div class="container is-max-desktop">
         <div class="hero-body">
-            <img class="round" style="width:1500px" src="./static/images/bmvc_teaser.png" />
+            <center>
+                <img src="./static/images/bmvc_teaser.png" alt="" border=0 height=350
+                    width=800></img></center>
             <h2 class="subtitle has-text-centered">
                 <span class="dnerf"></span>Overview of our approach compared to existing VLM adaptation methods. 
                 (a) Zero-shot inference with CLIP; (b) Contextual prompt token learning; 
@@ -167,8 +172,8 @@
                         <div class="content has-text-justified">
                             </h2>
                             <center>
-                                <img src="./static/images/bmvc_teaser.png" alt="" border=0 height=300
-                                    width=650></img></ </center>
+                                <img src="./static/images/mainfig.png" alt="" border=0 height=350
+                                    width=800></img></center>
                                 <div class="content has-text-justified">
                                     <strong>Contrastive multi-class prompt learning (CoMPLe)</strong> framework. 
                                     Our proposed CoMPLe learns class prompts by optimizing the LDM loss for 
@@ -182,16 +187,48 @@
                     </div>
                 </div>
         </section>
+
+        <section class="section">
+            <div class="container is-max-desktop">
+                <!-- Abstract. -->
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-four-fifths">
+                        <h2 class="title is-3">Results</h2>
+                        <div class="content has-text-justified">
+                            </h2>
+                            <center>
+                                <img src="./static/images/results.png" alt="" border=0 height=350
+                                    width=800></img></center>
+                                <div class="content has-text-justified">
+                                    Empirical comparison with prior state-of-the-art methods on few-shot image 
+                                    recognition via adapting vision-language models: (a) zero-shot 
+                                    (b) adapter tuning (c) prompt learning (d) our proposed 
+                                    <strong>GCPL</strong> and <strong>CoMPLe</strong> methods. We report the mean 
+                                    and standard deviation of 5 runs.
+                                &nbsp;
+                        </div>
+                        <div class="content has-text-justified">
+                        </h2>
+                        <center>
+                            <img src="./static/images/shots_vs_acc.png" alt="" border=0 height=350
+                                width=800></img></center>
+                            <div class="content has-text-justified">
+                                Ablation over different number of shots across various datasets.
+                            &nbsp;
+                    </div>
+                    </div>
+                </div>
+        </section>
     
         
                 <section class="section" id="BibTeX">
                     <div class="container is-max-desktop content">
                         <h2 class="title">BibTeX</h2>
                         <pre><code>@inproceedings{chattopadhyay2024towards,
-title={Towards Generative Class Prompt Learning for Fine-grained Visual Recognition},
-author={Chattopadhyay, Soumitri and Biswas, Sanket and Vivoli, Emanuele and Lladós, Josep},
-booktitle={British Machine Vision Conference (BMVC)},
-year={2024}
+    title={Towards Generative Class Prompt Learning for Fine-grained Visual Recognition},
+    author={Chattopadhyay, Soumitri and Biswas, Sanket and Vivoli, Emanuele and Lladós, Josep},
+    booktitle={British Machine Vision Conference (BMVC)},
+    year={2024}
 }</code></pre>
                     
 
