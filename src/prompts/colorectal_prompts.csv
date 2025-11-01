@@ -1,0 +1,9 @@
+prompt,classname,classidx
+adipose tissue.,adipose,0
+complex tissue.,complex,1
+debris tissue.,debris,2
+empty tissue.,empty,3
+lympho tissue.,lympho,4
+mucosa tissue.,mucosa,5
+stroma tissue.,stroma,6
+tumor tissue.,tumor,7
